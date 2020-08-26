@@ -1,6 +1,6 @@
 <template>
   <div>
-    switch组件文档
+    <p>switch组件文档</p>
   </div>
 </template>
 
