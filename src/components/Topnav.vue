@@ -1,6 +1,6 @@
 <template>
  <div class="topnav">
-      <div class="logo">Logo</div>
+      <div class="logo">LOGO</div>
       <div class="menu"></div>
       <ul class="menu">
         <li>菜单1</li>
