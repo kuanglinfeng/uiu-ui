@@ -1,5 +1,5 @@
 <template>
-  <button :class="{checked: value}" @click="toggle">
+  <button class="uiu-switch" :class="{'uiu-checked': value}" @click="toggle">
     <span></span>
   </button>
   <div>{{ value }}</div>
@@ -20,10 +20,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.uiu-switch {
   height: $h;
   width: 2 * $h;
   border: none;
@@ -44,10 +44,10 @@ button {
   &:active {
     > span {width: $h2 + 4px}
   }
-  &.checked:active {
+  &.uiu-checked:active {
     > span {width: $h2 + 4px; margin-left: -4px}
   }
-  &.checked {
+  &.uiu-checked {
     background: #1890ff;
     > span {
       left: calc(100% - #{$h2} - 2px)

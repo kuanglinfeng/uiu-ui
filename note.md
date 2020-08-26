@@ -33,3 +33,17 @@ props VS attrs
 - props不包含事件，attrs包含
 - props没有声明的属性，会跑到attrs里
 - props支持string及以外的类型，attrs只支持string类型
+
+UI库的css注意事项
+
+1. 不能使用scoped
+
+- 因为data-v-xxx中的xxx每次运行可能不同
+- 必须输出稳定不变的class选择器，方便使用者覆盖
+
+2. 必须加前缀
+
+- .button不行，很容易被使用者覆盖
+- .uiu-button可以，不太容易被覆盖
+- .theme-link不行，很容易被使用者覆盖
+- .uiu-theme-link可以，不太容易被覆盖
