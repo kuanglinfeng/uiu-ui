@@ -17,6 +17,21 @@ Vue2 和 Vue3 的区别
 
 ## 制作Button组件
 
+API设计
+
+```
+<Button
+  @click=?
+  @focus=?
+  @mouseover=?
+  theme="button or link or text"
+  level="main or normal or minor"
+  size="big normal small"
+  disabled
+  loading
+>按钮<Button>
+```
+
 Vue3属性绑定
 
 - 默认所有属性都绑定到根元素
