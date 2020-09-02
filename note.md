@@ -49,7 +49,7 @@ props VS attrs
 - props没有声明的属性，会跑到attrs里
 - props支持string及以外的类型，attrs只支持string类型
 
-UI库的css注意事项
+UI库的css注意事项（css最小影响原则）
 
 1. 不能使用scoped
 
@@ -62,3 +62,12 @@ UI库的css注意事项
 - .uiu-button可以，不太容易被覆盖
 - .theme-link不行，很容易被使用者覆盖
 - .uiu-theme-link可以，不太容易被覆盖
+
+
+## 制作Dialog组件
+
+API设计
+
+```template
+  <Dialog :visible="true" title="标题" @yes="fn1" @no="fn2" />
+```
