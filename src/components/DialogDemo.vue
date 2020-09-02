@@ -3,7 +3,7 @@
     dialog 示例
   </div>
   <h1>示例1</h1>
-  <button @click="toggle">toggle</button>
+  <Button @click="toggle">toggle</Button>
   <Dialog
     :visible="x"
     @update:visible="x = $event"
@@ -19,11 +19,14 @@
       <strong>加粗的标题</strong>
     </template>
   </Dialog>
+  <h2>示例2</h2>
+  <Button @click="showDialog">show</Button>
 </template>
 
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue'
 import Button from '../lib/Button.vue'
+import openDialog from '../lib/openDialog.ts'
 import { ref } from 'vue'
 
 export default {
@@ -36,10 +39,20 @@ export default {
     const f1 = () => {
       return false
     }
-    const f2 = () => {
-
+    const f2 = () => {}
+    const showDialog = () => {
+      openDialog({
+        title: '标题',
+        content: '你好',
+        ok() {
+          console.log('ok')
+        },
+        cancel() {
+          console.log('cancel')
+        }
+      })
     }
-    return { x, toggle, f1, f2 }
+    return { x, toggle, f1, f2, showDialog }
   }
 }
 </script>
