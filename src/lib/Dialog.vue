@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="uiu-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="uiu-dialog-wrapper">
-      <div class="uiu-dialog">
-        <header>
-          <slot name="title" />
-          <span @click="close" class="uiu-dialog-close"></span>
-        </header>
-        <main>
-          <slot name="content"/>
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="uiu-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="uiu-dialog-wrapper">
+        <div class="uiu-dialog">
+          <header>
+            <slot name="title" />
+            <span @click="close" class="uiu-dialog-close"></span>
+          </header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
