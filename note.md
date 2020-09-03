@@ -68,6 +68,25 @@ UI库的css注意事项（css最小影响原则）
 
 API设计
 
-```template
+```
   <Dialog :visible="true" title="标题" @yes="fn1" @no="fn2" />
+```
+
+
+## 制作Tabs组件
+
+API设计
+
+```
+<Tabs>
+  <Tab title="导航1">内容1</Tab>  
+  <Tab title="导航2"><Component1 /></Tab>  
+  <Tab title="导航3"><Component1 x="hi" /></Tab>  
+</Tabs>
+或者
+<Tabs :data="[
+  {title: '导航1', content: '内容1'},
+  {title: '导航2', content: Component1},
+  {title: '导航3', content: h(Component1, {x: 'hi'})},
+]" />
 ```
