@@ -94,3 +94,37 @@ API设计
 如何在运行时确认子组件的类型?
 
 通过检查context.slots.default()返回的数组
+
+
+总结
+
+- 用JS获取插槽内容
+
+```ts
+const default = context.slots.default()
+```
+
+- 钩子
+
+```ts
+onMounted(fn)
+onUpdated(fn)
+watchEffect(fn)
+```
+
+- TypeScript泛型
+```ts
+const indicator = ref<HTMLDivElement>(null)
+```
+
+- 获取宽高和位置
+
+```ts
+const {width, left} = el.getBoundingClientRect()
+```
+- ES6析构赋值的重命名语法
+
+```ts
+const {left: left1} = x.getBoundingClientRect()
+const {left: left2} = y.getBoundingClientRect()
+```
