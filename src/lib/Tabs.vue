@@ -1,7 +1,13 @@
 <template>
   <div>
-    <div v-for="(t, index) in titles" :key="index">{{ t }}</div>
-    <component v-for="(c, index) in defaults" :is="c" :key="index" />
+    <div class="uiu-tabs">
+      <div class="uiu-tabs-nav">
+        <div class="uiu-tabs-nav-item selected" v-for="(t,index) in titles" :key="index">{{t}}</div>
+      </div>
+      <div class="uiu-tabs-content">
+        <component class="uiu-tabs-content-item" v-for="(c,index) in defaults" :is="c" :key="index" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,5 +31,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+$blue: #40a9ff;
+$color: #333;
+$border-color: #d9d9d9;
+.uiu-tabs {
+  &-nav {
+    display: flex;
+    color: $color;
+    border-bottom: 1px solid $border-color;
+    &-item {
+      padding: 8px 0;
+      margin: 0 16px;
+      cursor: pointer;
+      &:first-child {
+        margin-left: 0;
+      }
+      &.selected {
+        color: $blue;
+      }
+    }
+  }
+  &-content {
+    padding: 8px 0;
+  }
+}
 </style>
