@@ -90,3 +90,7 @@ API设计
   {title: '导航3', content: h(Component1, {x: 'hi'})},
 ]" />
 ```
+
+如何在运行时确认子组件的类型?
+
+通过检查context.slots.default()返回的数组
